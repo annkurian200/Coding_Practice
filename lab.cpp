@@ -408,15 +408,116 @@ int fac(int n){
 }
 int main(){
     cout<<"factorial is "<<fac(5);
-}*/
+}
 #include<iostream>
 using namespace std;
 int main(){
     int a[5];
+    cout<<"enter: ";
     for(int i=0;i<5;i++){
         cin>>a[i];
     }
     for(int i=0;i<5;i++){
         cout<<a[i]<<endl;
     }
+}
+#include<iostream>
+using namespace std;
+int main(){
+    int a[5],sum=0;
+    cout<<"enter the numbers: ";
+    for(int i=0;i<5;i++){
+        cin>>a[i];
+    }
+    for(int i=0;i<5;i++){
+        sum=sum+a[i];
+    }
+    cout<<sum;
+
+}
+
+#include<iostream>
+using namespace std;
+int main(){
+    int a[5],i;
+    for(i=0;i<5;i++){
+        cin>>a[i];
+    }
+    int lar=a[0];
+    for(i=0;i<5;i++){
+        if(a[i]>lar){
+            lar=a[i];
+        }
+    }
+    cout<<lar;
+}
+
+#include<iostream>
+using namespace std;
+int main(){
+    int a[5],i;
+    for(i=0;i<5;i++){
+        cin>>a[i];
+    }
+    int sma=a[0];
+    for(i=0;i<5;i++){
+        if(a[i]<sma){
+            sma=a[i];
+        }
+    }
+    cout<<sma;
+}
+
+#include<iostream>
+using namespace std;
+int main(){
+    int a[5],i,n,found=false;
+    cout<<"enter numbers of array: ";
+    for(i=0;i<5;i++){
+        cin>>a[i];                                                                                                                                         a[i];
+    }
+    cout<<"Enter a number to find";
+    cin>>n;
+    for(i=0;i<5;i++){
+        if(a[i]==n){
+            found=true;
+            break;
+        }
+    }
+    if(found){
+        cout<<"Found";
+
+    }
+    else{
+        cout<<"not found";
+    }
+}
+*/
+#include<iostream>
+using namespace std;
+int main(){
+    int a[10],i,sum=0,avg;
+    cout<<"enter numbers for array: ";
+    for(i=0;i<10;i++){
+        cin>>a[i];
+    }
+    int lar=a[0],sma=a[0];
+    for(i=0;i<10;i++){
+        if(a[i]>lar){
+            lar=a[i];
+        }
+    }
+    cout<<"Largest number is: "<<lar;
+    for(i=0;i<10;i++){
+        if(a[i]<sma){
+            sma=a[i];
+        }
+    }
+    cout<<"\n Smallest number is: "<<sma;
+    for(i=0;i<10;i++){
+        sum=sum+a[i];
+    }
+    cout<<"\n Sum is: "<<sum;
+    avg=sum/10;
+    cout<<"\n average is: "<<avg;
 }
