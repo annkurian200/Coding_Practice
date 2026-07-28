@@ -492,7 +492,7 @@ int main(){
         cout<<"not found";
     }
 }
-*/
+
 #include<iostream>
 using namespace std;
 int main(){
@@ -520,4 +520,95 @@ int main(){
     cout<<"\n Sum is: "<<sum;
     avg=sum/10;
     cout<<"\n average is: "<<avg;
+}
+
+
+//Type casting 
+//Type conversion implicit
+#include<iostream>
+using namespace std;
+int main(){
+    char grade='A';
+    int value=grade;
+    cout<<value<<endl;
+    return 0;
+}
+//Type casting explicit
+#include<iostream>
+using namespace std;
+int main(){
+    int value =65;
+    char grade =value;
+    cout<<grade<<endl;
+    return 0;
+}
+
+#include<iostream>
+using namespace std;
+int main(){
+    cout<<(5/2)<<endl;
+    cout<<(5/(double)2);
+    return 0;
+}
+
+//Ternary Statement
+#include<iostream>
+using namespace std;
+int main(){
+    int n=21;
+    cout<<(n%2==0 ? "even":"odd")<<endl;
+    return 0;
+}
+//Revision
+//Sum of all odd numbers
+#include<iostream>
+using namespace std;
+int main(){
+    int n,count=0,sum=0;
+    cout<<"Number: ";
+    cin>>n;
+    while(count<=n){
+        if(count%2!=0){
+            sum=sum+count;
+        }
+        count=count+1;
+    }
+    cout<<"\nSum of odd numbers is: "<<sum;
+    return 0;
+}
+#include<iostream>
+using namespace std;
+int main(){
+    int n,i,res=1;
+    cout<<"enter number: ";
+    cin>>n;
+    for(i=1;i<=n;i++){
+        res=res*i;
+    }
+    cout<<"\n Factorial: "<<res;
+}
+#include<iostream>
+using namespace std;
+int main(){
+    int i,j,n=5;
+    for(i=1;i<=n;i++){
+        for(j=1;j<=n;j++){
+            cout<<j<<" ";
+        }
+        cout<<endl;
+    }
+}*/
+#include<iostream>
+using namespace std;
+int main(){
+    int i,j,n=5;
+    for(i=0;i<n;i++){
+        char ch='A';
+        for(j=0;j<n;j++){
+            cout<<ch;
+            ch=ch+1;
+        }
+        cout<<endl;
+    }
+    return 0;
 }
