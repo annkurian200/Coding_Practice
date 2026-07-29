@@ -597,7 +597,7 @@ int main(){
         }
         cout<<endl;
     }
-}*/
+}
 #include<iostream>
 using namespace std;
 int main(){
@@ -611,4 +611,57 @@ int main(){
         cout<<endl;
     }
     return 0;
+}
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cout<<"Enter a number";
+    cin>>n;
+    for(int i=0;i<n;i++){
+        for(int j=0;j<i+1;j++){
+            cout<<"*";
+        }
+        cout<<endl;
+    }
+}
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    char ch='A';
+    cout<<"Enter a number";
+    cin>>n;
+    for(int i=0;i<n;i++){
+        for(int j=0;j<i+1;j++){
+            cout<<ch;
+        }
+        cout<<endl;
+        ch=ch+1;
+    }
+}
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cout<<"Enter a number";
+    cin>>n;
+    for(int i=0;i<n;i++){
+        for(int j=0;j<i+1;j++){
+            cout<<j;
+        }
+        cout<<endl;
+    }
+}
+*/
+#include<iostream>
+using namespace std;
+int main(){
+    int n=4;
+    for(int i=0;i<n;i++){
+        for(int j=i+1;j>0;j--){
+            cout<<j;
+        }
+        cout<<endl;
+    }
 }
