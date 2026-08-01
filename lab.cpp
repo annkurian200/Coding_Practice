@@ -693,7 +693,7 @@ int main(){
         cout<<endl;
     }
 
-}*/
+}
 #include<iostream>
 using namespace std;
 int main(){
@@ -705,5 +705,154 @@ int main(){
             ch=ch-1;
         }
         cout<<endl;
+    }
+}
+//Inverse
+#include<iostream>
+using namespace std;
+int main(){
+    int n=4;
+    for(int i=0;i<n;i++){
+        for(int j=0;j<i;j++){
+            cout<<" ";
+        }
+        for(int j=0;j<n-i;j++){
+            cout<<i+1;
+        }
+        cout<<endl;
+    }
+}
+#include<iostream>
+using namespace std;
+int main(){
+    int n=4;
+    char ch='A';
+    for(int i=0;i<n;i++){
+        for(int j=0;j<i;j++){
+            cout<<" ";
+        }
+        for(int j=0;j<n-i;j++){
+            cout<<ch;
+        }
+        ch=ch+1;
+        cout<<endl;
+    }
+}
+#include<iostream>
+using namespace std;
+int main(){
+    int n=4;
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n-(i+1);j++){
+            cout<<" ";
+        }
+        for(int j=0;j<i+1;j++){
+            cout<<j+1;
+        }
+        for(int j=i;j>0;j--){
+            cout<<j;
+        }
+        cout<<endl;
+    }
+}
+//Hallow diamond
+#include<iostream>
+using namespace std;
+int main(){
+    int n=4;
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n-(i+1);j++){
+            cout<<" ";
+        }
+        cout<<"*";
+        if(i!=0){
+            for(int j=0;j<2*i-1;j++){
+            cout<<" ";
+            }
+            cout<<"*";
+        }
+        cout<<endl;
+    }
+    for(int i=n-1;i>0;i--){
+        for(int j=0;j<n-i;j++){
+            cout<<" ";
+        }
+        cout<<"*";
+        if(i!=1){
+            for(int j=0;j<2*(i-1)-1;j++){
+                cout<<" ";
+            }
+            cout<<"*";
+        }
+        cout<<endl;
+    }
+}
+//2nd method
+#include<iostream>
+using namespace std;
+int main(){
+    int n=4;
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n-(i+1);j++){
+            cout<<" ";
+        }
+        cout<<"*";
+        if(i!=0){
+            for(int j=0;j<2*i-1;j++){
+            cout<<" ";
+            }
+            cout<<"*";
+        }
+        cout<<endl;
+    }
+    //diferent from here
+    for(int i=0;i<n-1;i++){
+        for(int j=0;j<i+1;j++){
+            cout<<" ";
+        }
+        cout<<"*";
+        if(i!=n-2){
+            for(int j=0;j<2*(n-i)-5;j++){   // 2*(n-2-i)-1
+                cout<<" ";
+            }
+            cout<<"*";
+        }
+        cout<<endl;
+    }
+}*/
+//Butterfly pattern
+#include<iostream>
+using namespace std;
+int main(){
+    int n=4;
+    for(int i=0;i<n;i++){
+        for(int j=0;j<i+1;j++){
+            cout<<"*";
+        }
+        if(i!=n-1){
+            for(int j=0;j<2*(n-1-i);j++){
+                cout<<" ";
+            }
+        }
+        for(int j=0;j<i+1;j++){
+            cout<<"*";
+        }
+        cout<<endl;
+
+    }
+    for(int i=n;i>0;i--){
+        for(int j=i;j>0;j--){
+            cout<<"*";
+        }
+        if(i!=n){
+            for(int j=0;j<2*(n-i);j++){
+                cout<<" ";
+            }
+        }
+        for(int j=i;j>0;j--){
+            cout<<"*";
+        }
+        cout<<endl;
+
     }
 }
