@@ -819,7 +819,7 @@ int main(){
         }
         cout<<endl;
     }
-}*/
+}
 //Butterfly pattern
 #include<iostream>
 using namespace std;
@@ -855,4 +855,71 @@ int main(){
         cout<<endl;
 
     }
+}
+
+#include<iostream>
+using namespace std;
+int sumOfno(int n){
+    int sum=0;
+    for(int i=0; i<=n;i++){
+        sum=sum+i;
+    }
+    return sum;
+}
+int main(){
+    cout<<"Sum = "<<sumOfno(5);
+    return 0;
+}
+
+#include<iostream>
+using namespace std;
+int fact(int n){
+    int res=1;
+    while(n>0){
+        res=res*n;
+        n=n-1;
+    }
+    return res;
+}
+int main(){
+    cout<<"Factorial = "<<fact(5);
+    return 0;
+}
+
+#include<iostream>
+using namespace std;
+int sumOfdigits(int n){
+    int sum=0,r;
+    while(n>0){
+        r=n%10;
+        sum=sum+r;
+        n=n/10;
+    }
+    return sum;
+}
+
+int main(){
+    cout<<"Sum of digits is = "<<sumOfdigits(111);
+    return 0;
+}*/
+#include<iostream>
+using namespace std;
+int fact(int n ){
+    int res=1;
+    while(n>0){
+        res=res*n;
+        n=n-1;
+    }
+    return res;
+}
+int binomialcoeff(int n,int r){
+    int num=fact(n);
+    int re=fact(r);
+    int m=fact(n-r);
+
+    return num/(re*m);
+}
+int main(){
+    cout<<binomialcoeff(8,2);
+    return 0;
 }
