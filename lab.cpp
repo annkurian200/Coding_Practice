@@ -901,7 +901,7 @@ int sumOfdigits(int n){
 int main(){
     cout<<"Sum of digits is = "<<sumOfdigits(111);
     return 0;
-}*/
+}
 #include<iostream>
 using namespace std;
 int fact(int n ){
@@ -923,3 +923,76 @@ int main(){
     cout<<binomialcoeff(8,2);
     return 0;
 }
+
+#include<iostream>
+using namespace std;
+int primenos(int n){
+    bool isPrime=true;
+    for(int i=2;i<n;i++){
+        if(n%i==0){
+            isPrime=false;
+            break;
+        }
+    }
+    if(isPrime){
+        return 1;
+    }
+    else{
+        return 0;
+    }
+    
+}
+int main(){
+    cout<<primenos(5);
+    return 0;
+}
+//complete this
+#include<iostream>
+using namespace std;
+void primenos(int n){
+    for(int i=2;i<n;i++){
+        if(n%i==0){
+            cout<< i<<endl;
+        }
+
+    }
+}
+int main(){
+    primenos(10);
+    return 0;
+}
+//Binary system
+#include<iostream>
+using namespace std;
+int binary(int num){
+    int r,ans=0,power=1;
+    while(num>0){
+        r=num%2;
+        num=num/2;
+        ans=ans+r*power;
+        power=power*10;
+    }
+    return ans;
+}
+int main(){
+    cout<<binary(42);
+    return 0;
+}
+
+#include<iostream>
+using namespace std;
+int decimal(int n){
+    int r,ans=0,power=1;
+    while(n>0){
+        r=n%10;
+        ans=ans+r*power;
+        n=n/10;
+        power*=2;
+
+    }
+    return ans;
+}
+int main(){
+    cout<<decimal(101010);
+    return 0;
+}*/
