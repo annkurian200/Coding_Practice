@@ -995,4 +995,137 @@ int decimal(int n){
 int main(){
     cout<<decimal(101010);
     return 0;
-}*/
+}
+//Bitwise operators
+#include<iostream>
+using namespace std;
+int main(){
+    int a=6,b=10;
+    cout<<(a & b)<<endl;
+    cout<<(a|b)<<endl;
+    cout<<(a^b)<<endl;;
+    cout<<(10<<2)<<endl;
+    cout<<(10>>1)<<endl;
+    return 0;
+}
+
+#include<iostream>
+using namespace std;
+int main(){
+    int a[5]={2,4,6,1,7};
+    int sm=INT_MAX;//this is largest number till infinity
+    int la=INT_MIN;
+    for(int i=0;i<5;i++){
+        if(a[i]<sm){
+            sm=a[i];
+        }
+    }
+    for(int i=0;i<5;i++){
+        if(a[i]>la){
+            la=a[i];
+        }
+    }
+    for(int i=0;i<5;i++){
+        sm=min(a[i],sm);
+    }
+    cout<<sm;
+}
+
+//Print index of smallest number
+#include<iostream>
+using namespace std;
+int main(){
+    int a[]={2,1,4,0,5};
+    int size=5;
+    int sm=INT_MAX;
+    int i,index;
+    for(i=0;i<size;i++){
+        if(sm>a[i]){
+            index=i;
+        }
+    }
+    cout<<index;
+}
+//Linear Search
+#include<iostream>
+using namespace std;
+int linear(int a[],int s,int target){
+    for(int i=0;i<s;i++){
+        if(a[i]==target){
+            return i;
+        }
+    }
+    return -1;
+}
+int main(){
+    int a[]={2,3,4,2,5,6};
+    int s=6;
+    int target=60;
+    cout<<linear(a,s,target);
+    return 0;
+}
+//Reverse array without making a new array
+#include<iostream>
+using namespace std;
+void rev(int a[],int s){
+    int start=0;
+    int end=s-1;
+    while(start<end){
+        swap(a[start],a[end]);
+        start++,end--;
+    }
+}
+int main(){
+    int a[]={2,3,1,5,4};
+    int s=5;
+    rev(a,s);
+    for(int i=0;i<s;i++){
+        cout<<a[i]<<" ";
+    }
+}
+//HW
+//Sum &product of array
+#include<iostream>
+using namespace std;
+int main(){
+int a[]={1,2,1,1,1};
+int s=5;
+int sum=0,res=1;
+for(int i=0;i<s;i++){
+    sum=sum+a[i];
+}
+cout<<"Sum is: "<<sum<<endl;
+for(int i=0;i<s;i++){
+    res=res*a[i];
+}
+cout<<"Product is: "<<res;
+}
+*/
+//Swap Max and min of array incomplete 
+#include<iostream>
+using namespace std;
+void swap_m(int a[],int s){
+    int sm=INT_MAX;
+    int min_i;
+    for(int i=0;i<s;i++){
+        if(a[i]<sm){
+            min_i=i;
+        }
+    }
+    int la=INT_MIN;
+    int max_i;
+    for(int i=0;i<s;i++){
+        if(a[i]>la){
+            max_i=i;
+        }
+    }
+    swap(a[max_i],a[min_i]);
+}
+int main(){
+    int a[]={5,2,3,4,1};
+    int s=5;
+    swap_m(a,s);
+    for(int i=0;i<s;i++){
+        cout<<a[i]<<" ";
+    }
+}
