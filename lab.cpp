@@ -1100,8 +1100,8 @@ for(int i=0;i<s;i++){
 }
 cout<<"Product is: "<<res;
 }
-*/
-//Swap Max and min of array incomplete 
+
+//Swap Max and min of array 
 #include<iostream>
 using namespace std;
 void swap_m(int a[],int s){
@@ -1109,6 +1109,7 @@ void swap_m(int a[],int s){
     int min_i;
     for(int i=0;i<s;i++){
         if(a[i]<sm){
+            sm=a[i];
             min_i=i;
         }
     }
@@ -1116,10 +1117,11 @@ void swap_m(int a[],int s){
     int max_i;
     for(int i=0;i<s;i++){
         if(a[i]>la){
+            la=a[i];
             max_i=i;
         }
     }
-    swap(a[max_i],a[min_i]);
+    swap(a[min_i],a[max_i]);
 }
 int main(){
     int a[]={5,2,3,4,1};
@@ -1128,4 +1130,20 @@ int main(){
     for(int i=0;i<s;i++){
         cout<<a[i]<<" ";
     }
+}
+*/
+#include<iostream>
+using namespace std;
+int main(){
+    int a[]={2,3,1,2};
+    int r[10],i,j;
+    for(int i=0;i<3;i++){
+            int target=a[i];
+            for(int j=0;j<3;j++){
+                if(target!=a[j]){
+                    r[10]=r[10]+target;
+                }
+            }
+    }
+    cout<<r[j];
 }
