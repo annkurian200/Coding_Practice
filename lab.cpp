@@ -1131,19 +1131,41 @@ int main(){
         cout<<a[i]<<" ";
     }
 }
-*/
+
+//Find unique element
 #include<iostream>
 using namespace std;
 int main(){
-    int a[]={2,3,1,2};
-    int r[10],i,j;
-    for(int i=0;i<3;i++){
-            int target=a[i];
-            for(int j=0;j<3;j++){
-                if(target!=a[j]){
-                    r[10]=r[10]+target;
+    int a[]={2,3,1,4,2,3};
+    int i,j,target;
+    bool found;
+    for(int i=0;i<6;i++){
+            found=false;
+            for(int j=0;j<6;j++){
+                if(a[i]==a[j] && i!=j){
+                    found=true;
+                    break;
                 }
             }
+             if(found==false){
+                cout<<a[i];
+            }
     }
-    cout<<r[j];
+}
+*/
+//Intersection of arrays
+#include<iostream>
+using namespace std;
+int main(){
+    int a[]={1,2,3,4};
+    int b[]={8,4,5,6};
+    int size=4;
+    int i,j;
+    for(i=0;i<size;i++){
+        for(j=0;j<size;j++){
+            if(a[i]==b[j]){
+                cout<<a[i];
+            }
+        }
+    }
 }
