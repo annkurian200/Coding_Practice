@@ -1152,7 +1152,7 @@ int main(){
             }
     }
 }
-*/
+
 //Intersection of arrays
 #include<iostream>
 using namespace std;
@@ -1168,4 +1168,41 @@ int main(){
             }
         }
     }
+}
+*/
+//Vectors
+#include<iostream>
+#include<vector>
+using namespace std;
+int main(){
+    vector<int>vec={1,2,3};
+    vector<int>v(3,1);
+    cout<<v[1]<<endl;
+    for(int i:vec){ //for each loop it prints the value of index
+        cout<<i<<endl;
+    }
+    cout<<vec[0]<<endl;
+
+    //vector functions
+    //size function
+    cout<<"Size="<<vec.size()<<endl;
+    //Push back (add element from last)
+    vec.push_back(5);
+    cout<<"after push size="<<vec.size()<<endl;
+    for(int i:vec){ 
+        cout<<i<<endl;
+    }
+    //Pop back (delete element from last)
+    vec.pop_back();
+    cout<<"after pop size="<<vec.size()<<endl;
+    for(int i:vec){ 
+        cout<<i<<endl;
+    }
+    //Front (displays first element)
+    cout<<"First="<<vec.front()<<endl;
+    //Back (displays last element)
+    cout<<"Last="<<vec.back()<<endl;
+    //at(accesses value at index)
+    cout<<vec.at(1)<<endl;
+    return 0;
 }
