@@ -1169,7 +1169,7 @@ int main(){
         }
     }
 }
-*/
+
 //Vectors
 #include<iostream>
 #include<vector>
@@ -1206,3 +1206,48 @@ int main(){
     cout<<vec.at(1)<<endl;
     return 0;
 }
+
+#include<iostream>
+#include<vector>
+using namespace std;
+int main(){
+    vector<int>vec;
+    vec.push_back(1);
+    vec.push_back(2);
+    vec.push_back(3);
+    vec.push_back(1);
+    vec.push_back(1);
+
+    cout<<vec.size()<<endl;
+    cout<<vec.capacity();
+}
+//Single Number(unique element)
+#include<iostream>
+#include<vector>
+using namespace std;
+int singleNum(vector<int>&nums){
+    int ans=0;
+    for(int i:nums){
+        ans=ans^i;
+    }
+    return ans;
+}
+int main(){
+    vector<int>nums={1,2,2,3,1};
+    cout<<singleNum(nums);
+}
+
+#include<iostream>
+#include<vector>
+using namespace std;
+int main(){
+    vector<int>vec={1,2,3,4,5};
+    int num=3;
+    for(int &i:vec){
+        if(i==num){
+            cout<<"Number found at "<<&i-&vec[0];//vec[0]=100 consider i to be at 3 vec[2]=108 cal=108-100=8bytes divided bys size of int =4 =8/4=2
+        }
+    }
+    return 0;
+}
+*/
