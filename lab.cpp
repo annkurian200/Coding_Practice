@@ -1245,9 +1245,78 @@ int main(){
     int num=3;
     for(int &i:vec){
         if(i==num){
-            cout<<"Number found at "<<&i-&vec[0];//vec[0]=100 consider i to be at 3 vec[2]=108 cal=108-100=8bytes divided bys size of int =4 =8/4=2
+            cout<<"Number found at "<<&i-&vec[0];//vec[0]=100 consider i to be at 3 vec[2]=108 cal=108-100=8bytes divided by size of int =4 =8/4=2
         }
     }
     return 0;
 }
+
+//Maximum subaarays of a array
+#include<iostream>
+using namespace std;
+int main(){
+    int n=5;
+    int a[5]={1,2,3,4,5};
+    for(int st=0;st<n;st++){
+        for(int end=st;end<n;end++){
+            for(int i=st; i<=end;i++){
+                cout<<a[i];
+            }
+            cout<<" ";
+        }
+        cout<<endl;
+    }
+    return 0;
+}
+
+//Maximum subarray sum
+//Brute force approach O(n^2)
+#include<iostream>
+using namespace std;
+int main(){
+    int n=5;
+    int a[5]={1,2,3,4,5};
+    int maxSum=INT_MIN;
+    for(int start=0;start<n;start++){
+        int curSum=0;
+        for(int end=start;end<n;end++){
+            curSum+=a[end];
+            maxSum=max(curSum,maxSum);
+        }
+    }
+    cout<<"max subarray sum= "<<maxSum;
+    return 0;
+}
+//Kadane's algorithm(most optimised way) O(n)
+#include<iostream>
+using namespace std;
+int main(){
+    int n=5;
+    int a[5]={1,2,3,4,5};
+    int maxSum=INT_MIN,curSum=0;
+    for(int i=0;i<n;i++){
+        curSum+=a[i];
+        maxSum=max(curSum,maxSum);
+        if(curSum<0){
+            curSum=0;
+        }
+    }
+    cout<<maxSum;
+}
 */
+#include<iostream>
+using namespace std;
+int main(){
+    int a[4]={2,7,11,15};
+    int n=4;
+    int target=18;
+    for(int st=0;st<n;st++){
+        int cs=a[st];
+        for(int i=st;i<n;i++){
+            cs=cs+a[i+1];
+            if(cs==target){
+                cout<<"target found at"<<st<<"and"<<i+1;
+            }
+        }
+    }
+}
