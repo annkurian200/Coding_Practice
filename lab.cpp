@@ -1303,7 +1303,7 @@ int main(){
     }
     cout<<maxSum;
 }
-*/
+PAir sum
 #include<iostream>
 using namespace std;
 int main(){
@@ -1319,4 +1319,92 @@ int main(){
             }
         }
     }
+}
+
+//Pair sum of sorted array
+#include<iostream>
+#include<vector>
+using namespace std;
+vector<int> sumPair(vector<int>& nums, int target){
+        int n=nums.size();
+        vector<int>ans;
+        int i=0,j=n-1;
+        while(i<j){
+            int sum=nums[i]+nums[j];
+            if(sum>target){
+                j--;
+            }
+            else if(sum<target){
+                i++;
+            }
+            else{
+                ans.push_back(i);
+                ans.push_back(j);
+                return ans;
+            }
+        }
+        return ans;
+}
+
+int main(){
+    vector<int> nums={2,7,11,15};
+    int target=26;
+    vector<int> ans=sumPair(nums,target);
+    cout<<ans[0]<<" ,"<<ans[1]<<endl;
+    return 0;
+}
+
+//Majority element
+//Brute force approach O(n^2)
+#include<iostream>
+#include<vector>
+using namespace std;
+int majel(vector<int>a){
+    int n=a.size();
+    for(int i=0;i<n;i++){
+        int count=0;
+        for(int j=0;j<n;j++){
+            if(a[i]==a[j]){
+                count++;
+            }
+        }
+        if(count>n/2){
+            return a[i];
+        }
+    }
+    return -1;
+}
+int main(){
+    vector<int>a={1,2,2,1,1};
+    cout<<majel(a);
+    return 0;
+}*/
+//Majority element 
+//optimized way
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+int major(vector<int> a){
+    int n=a.size();
+    sort(a.begin(),a.end());
+    int f=1,ans=a[0];
+    for(int i=1;i<n;i++){
+        if(a[i]==a[i-1]){
+            f++;
+        }
+        else{
+            f=1;
+            ans=a[i];
+        }
+        if(f>n/2){
+        return ans;
+        }
+    }
+    return -1;
+}
+int main(){
+    vector<int>a={2,1,3,1,1};
+    cout<<major(a);
+    return 0;
 }
