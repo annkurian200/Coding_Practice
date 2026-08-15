@@ -1378,7 +1378,7 @@ int main(){
     vector<int>a={1,2,2,1,1};
     cout<<majel(a);
     return 0;
-}*/
+}
 //Majority element 
 //optimized way
 #include<iostream>
@@ -1406,5 +1406,78 @@ int major(vector<int> a){
 int main(){
     vector<int>a={2,1,3,1,1};
     cout<<major(a);
+    return 0;
+}
+//Recursion
+//Printing numbers from 1 to n
+#include<iostream>
+using namespace std;
+void printNums(int n){
+    if(n==1){
+        cout<<"1\n";
+        return ;
+    }
+    cout<<n<<" ";
+    printNums(n-1);
+}
+int main(){
+    printNums(4);
+    return 0;
+}
+
+//Factorial
+#include<iostream>
+using namespace std;
+int factorial(int n){
+    if(n==0){
+        return 1;
+    }
+    return n*factorial(n-1);
+}
+int main(){
+    cout<<factorial(5);
+    return 0;
+}
+
+//Sum of n numbers
+#include<iostream>
+using namespace std;
+int sum(int n){
+    if (n==1){
+        return 1;
+    }
+    return n+sum(n-1);
+}
+int main(){
+    cout<<sum(4);
+    return 0;
+}
+*/
+//Plus one
+#include<iostream>
+#include<vector>
+using namespace std;
+vector<int> plusOne(vector<int>a){
+        int n=a.size();
+        for(int i=n-1;i>=0;i--){
+            if(a[i]<9){
+                a[i]++;
+                return a;
+            }
+            a[i]=0;
+            
+        }
+        a.insert(a.begin(),1);
+        return a;
+}
+
+
+int main(){
+    vector<int> a={2,9};
+    vector<int>ans=plusOne(a);
+    for(int i=0;i<ans.size();i++){
+
+        cout<<ans[i]<<" ";
+    }
     return 0;
 }
