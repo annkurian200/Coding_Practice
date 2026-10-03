@@ -1452,7 +1452,7 @@ int main(){
     cout<<sum(4);
     return 0;
 }
-*/
+
 //Plus one
 #include<iostream>
 #include<vector>
@@ -1479,5 +1479,97 @@ int main(){
 
         cout<<ans[i]<<" ";
     }
+    return 0;
+}
+
+#include<iostream>
+#include<vector>
+using namespace std;
+vector<int> array_add(vector<int> num,int k){
+    int n=num.size();
+    int i=n-1;
+    int carry=0;
+    while(i>=0 || k>0  ){
+        int num_d=num[i];
+        int k_d=k%10;
+        k=k/10;
+        int add=num_d+k_d+carry;
+        num[i]=add%10;
+        if(add>9){
+            carry=add/10;
+        }
+        i--;
+    }
+    return num;
+}
+int main(){
+    vector<int>a={9,9,9};
+    int k=2001;
+    vector<int>ans=array_add(a,k);
+    for(int i=0;i<ans.size();i++){
+
+        cout<<ans[i]<<" ";
+    }
+    return 0;
+}
+
+#include<iostream>
+#include<vector>
+using namespace std;
+int removeElement(vector<int>& nums, int val){
+    int k=0;
+    for(int i=0;i<nums.size();i++){
+        if(nums[i]!=val){
+            nums[k]=nums[i];
+            k++;
+        }
+    }
+    return k;
+}
+*/
+#include <iostream>
+#include <string>
+#include<vector>
+#include <numeric>   // Required for accumulate (sum)
+#include <algorithm>// Required for max_element
+using namespace std;
+
+int Cal_stu(vector<int>a,int n,int m,int maxPages){
+    int stu=1, pages=0;
+    for(int i=0;i<n;i++){
+        if(pages+a[i]<=maxPages){
+            pages+=a[i];
+        }
+        else{
+            stu++;
+            pages=a[i];
+        }
+    }
+    return stu;
+}
+int minPages(vector<int>a,int n,int m){
+    if(m>n){
+        return -1;
+    }
+    int low=*max_element(a.begin(), a.end()); 
+    int high = accumulate(a.begin(), a.end(), 0); 
+    int ans=0;
+    while(low<=high){
+        int mid=low+(high-low)/2;
+        if(Cal_stu(a,n,m,mid)<=m){
+            ans=mid;
+            high=mid-1;
+        }
+        else{
+            low=mid+1;
+        }
+
+    }
+    return ans;
+}
+int main(){
+    vector<int>a={12, 34, 67, 90};
+    int n=4,m=2;
+    cout<<minPages(a,n,m)<<endl;
     return 0;
 }
